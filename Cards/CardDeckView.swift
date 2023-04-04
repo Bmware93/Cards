@@ -1,21 +1,28 @@
 //
-//  ContentView.swift
+//  CardDeckView.swift
 //  Cards
 //
-//  Created by Benia Morgan-Ware on 4/2/23.
+//  Created by Benia Morgan-Ware on 4/3/23.
 //
 
 import SwiftUI
 
-struct ContentView: View {
+struct CardDeckView: View {
+    var cards: [Card]
+    
     var body: some View {
-        CardView(card: Card(font: "What is 7+7?",
-                            back: "14"))
-        
+        TabView {
+            ForEach(cards) { card in
+              CardView(card: card)
+          
+            }
+        }
+        .tabViewStyle(.page)
+        .background(Color.gray)
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct CardDeckView_Previews: PreviewProvider {
     static let cards = [
         Card(font: "What is 7+7?", back: "14"),
     Card(font: "What is the airspeed velocity of an unladen swallow?", back: "African or European?"),
@@ -23,6 +30,5 @@ struct ContentView_Previews: PreviewProvider {
     ]
     static var previews: some View {
         CardDeckView(cards: cards)
-      
     }
 }
