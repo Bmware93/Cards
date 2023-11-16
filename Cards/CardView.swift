@@ -60,7 +60,7 @@ struct CardView: View {
 struct CardView_Previews: PreviewProvider {
     static let cardPreview = [
     Card(font: "What is 7+7?", back: "14"),
-    Card(font: "What is the airspeed velocity of an unladen swallow?", back: "African or European?"),
+    Card(font: "What is the airspeed velocity of an unladen swallow?", back: "African or European"),
     Card(font: "From what is cognac made?", back: "Grapes")
     ]
     static var previews: some View {

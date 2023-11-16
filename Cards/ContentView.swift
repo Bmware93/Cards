@@ -8,9 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var cards: [Card] = [
+    Card(font: "What is 7 + 7?", back: "14"),
+    Card(font: "What is the airspeed velocity of an unladen swallow?", back: "African or European"),
+    Card(font: "From what is cognac made?", back: "Grapes")
+    ]
+    
     var body: some View {
-        CardView(card: Card(font: "What is 7+7?",
-                            back: "14"))
+        
+       CardDeckView(cards: cards)
         
     }
 }
